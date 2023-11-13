@@ -82,11 +82,10 @@ func StartTimer(w io.Writer, r io.Reader, timer Timer) *time.Timer {
 func init() {
 	flagger := &quizFlags{}
 	ConfigFlags(flagger)
-
-	flag.Parse()
 }
 
 func main() {
+	flag.Parse()
 	file, err := os.Open(file)
 	if err != nil {
 		panic(err)
